@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Alysa",
+    "description": "campera de abrigo",
+    "price": 5000,
+    "thumbnail": "https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/campera-de-abrigo-con-capucha-topper-puffer-ii-ni-a-rosa-800020165692001-1.jpg",
+    "code": "alysa",
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "title": "Matt",
+    "description": "campera de abrigo",
+    "price": 4000,
+    "thumbnail": "https://www.solodeportes.com.ar/campera-de-abrigo-con-capucha-atomik-toronto-ni-o-azul.html",
+    "code": "matt",
+    "stock": 15
+  }
+]
