@@ -80,15 +80,16 @@ class ProductManager {
   }
 
   loadProductsFromFile() {
-    try {
-      const data = fs.readFileSync('products.json', 'utf8');
-      this.products = JSON.parse(data);
-      this.productIdCounter = Math.max(...this.products.map((product) => product.id)) + 1;
-    } catch (err) {
-     
-      console.error('Error loading products from file:', err);
-    }
+  try {
+    const data = fs.readFileSync('products.json', 'utf8');
+    this.products = JSON.parse(data);
+    this.productIdCounter = Math.max(0, ...this.products.map((product) => product.id)) + 1;
+  } catch (err) {
+    this.products = [];
+    this.productIdCounter = 1; 
+    console.error('Error loading products from file:', err);
   }
+}
 
   saveProductsToFile() {
     try {
@@ -124,3 +125,32 @@ productManager.addProduct({
 console.log(productManager.getProducts());
 
 console.log(productManager.getProductById(2));
+
+productManager.addProduct({
+  title: "Leah",
+  description: "calza deportiva",
+  price: 4000,
+  thumbnail: "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dwad3c88e4/products/NB_2L020004550/NB_2L020004550-1.JPG",
+  code: "leah",
+  stock: 10,
+});
+
+productManager.addProduct({
+  title: "Jack",
+  description: "remera manga corta",
+  price: 3000,
+  thumbnail: "https://sporting.vtexassets.com/arquivos/ids/649266-1200-1200?v=638013553876070000&width=1200&height=1200&aspect=true",
+  code: "jack",
+  stock: 50,
+});
+
+productManager.addProduct({
+  title: "Peter",
+  description: "remera manga larga",
+  price: 4000,
+  thumbnail: "https://http2.mlstatic.com/D_NQ_NP_764260-MLA51087512383_082022-O.webp",
+  code: "peter",
+  stock: 20,
+});
+
+module.exports = productManager;
